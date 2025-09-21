@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -10,7 +11,9 @@ import {
   HiEye,
   HiHeart
 } from 'react-icons/hi';
-import { FaLeaf } from "react-icons/fa"; // Use FaLeaf instead of HiLeaf
+import { FaLeaf } from "react-icons/fa";
+import { MdOutlineScience } from "react-icons/md";
+import { FaHandshake } from "react-icons/fa";
 import './Home.css';
 
 const Home = () => {
@@ -38,7 +41,19 @@ const Home = () => {
       title: "Farmer Stories",
       description:
         "Connect with the farmers behind your products and learn about their dedication to quality and sustainability."
-    }
+    },
+    {
+      icon: MdOutlineScience,
+      title: "Quality Assurance",
+      description:
+        "Access verified lab reports and quality certifications for every batch."
+    },
+    {
+      icon: FaHandshake,
+      title: "Fair Trade",
+      description:
+        "Support farmers with fair wages and ethical trading practices."
+    },
   ];
 
   const stats = [
@@ -49,6 +64,7 @@ const Home = () => {
   ];
 
   return (
+    <>
     <motion.div
       className="home"
       initial={{ opacity: 0 }}
@@ -74,7 +90,7 @@ const Home = () => {
                 Discover the complete journey of your Ayurvedic products with
                 blockchain-powered transparency. From farm to pharmacy, every
                 step is verified and traceable.
-              </p>
+              </p><br/>
               <div className="hero-actions">
                 <Link to="/scan" className="btn btn-primary">
                   <HiQrcode size={20} />
@@ -187,6 +203,8 @@ const Home = () => {
         </div>
       </section>
     </motion.div>
+    <Footer />
+    </>
   );
 };
 

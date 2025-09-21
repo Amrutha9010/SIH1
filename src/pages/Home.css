@@ -1,6 +1,7 @@
 .home {
   padding-top: 5rem;
   margin-left: 0px; 
+  width: 100%;
 }
 
 /* Hero Section */
@@ -17,7 +18,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  width: 1000px;
+  width: 1300px;
 }
 
 .hero-text {
@@ -124,7 +125,7 @@
 .feature-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--light-green), rgba(34, 197, 94, 0.1));
+  background: linear-gradient(135deg, var(--light-green), rgba(6, 233, 89, 0.1));
   border-radius: 50%;
   display: flex;
   align-items: center;

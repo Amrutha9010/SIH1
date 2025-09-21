@@ -10,6 +10,7 @@ import {
   HiLocationMarker
 } from 'react-icons/hi';
 import './About.css';
+import Footer from '../components/Footer';
 
 const About = () => {
   const values = [
@@ -63,6 +64,7 @@ const About = () => {
   ];
 
   return (
+    <>
     <motion.div 
       className="about"
       initial={{ opacity: 0 }}
@@ -272,6 +274,8 @@ const About = () => {
         </div>
       </section>
     </motion.div>
+    <Footer />
+    </>
   );
 };
 
