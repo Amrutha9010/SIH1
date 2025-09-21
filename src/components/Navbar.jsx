@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiMenu, HiX, HiQrcode } from 'react-icons/hi';
+// import { LuLeaf } from "react-icons/lu";
+import { Menu, X, Leaf } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -39,8 +41,12 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="logo-text">AyurChain</span>
-              <span className="logo-tagline">Transparency through Technology</span>
+              {/* <div className="bg-green-500 p-2 rounded-lg flex items-center justify-center">
+                <Leaf className="h-6 w-6" stroke="black" />
+              </div> */}
+
+              <span className="logo-text">TrustTrace</span>
+              {/* <span className="logo-tagline">Transparency through Technology</span> */}
             </motion.div>
           </Link>
 

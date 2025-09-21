@@ -1,17 +1,43 @@
-// src/pages/QRScan.jsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Camera, Upload, Scan, AlertCircle } from 'lucide-react';
-import Footer from '../components/Footer';            // ← import your Footer
+import { Camera, Upload, Scan, AlertCircle, Sparkles, Leaf, Shield, Clock } from 'lucide-react';
+import Footer from '../components/Footer';
 import './QRScan.css';
-import '../components/Footer.jsx';
 
 const QRScan = () => {
   const [isScanning, setIsScanning] = useState(false);
   const [error, setError] = useState('');
   const [manualCode, setManualCode] = useState('');
+  const [activeFeature, setActiveFeature] = useState(0);
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
+
+  // Features for the rotating display
+  const features = [
+    {
+      icon: <Shield size={24} />,
+      title: "Immutable Records",
+      description: "Every product's journey is securely stored on blockchain"
+    },
+    {
+      icon: <Leaf size={24} />,
+      title: "Authentic Herbs",
+      description: "Verified organic sources with sustainable farming practices"
+    },
+    {
+      icon: <Clock size={24} />,
+      title: "Real-time Tracking",
+      description: "Follow your product's journey from farm to shelf"
+    }
+  ];
+
+  // Rotate through features
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % features.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [features.length]);
 
   const handleScan = (qrCode) => {
     if (qrCode) {
@@ -55,20 +81,48 @@ const QRScan = () => {
   return (
     <>
       <div className="qr-scan-page">
+        {/* Animated background elements */}
+        <div className="floating-herbs">
+          <div className="herb herb-1"></div>
+          <div className="herb herb-2"></div>
+          <div className="herb herb-3"></div>
+          <div className="herb herb-4"></div>
+        </div>
+<br/><br/>
         <div className="qr-scan-container">
-          
-          {/* Header */}
+          {/* Animated header with sparkles */}
           <header className="qr-scan-header">
-            <h1 className="qr-scan-title"><br/>Scan Your Product</h1>
+            <div className="title-sparkle">
+              <Sparkles className="sparkle-icon" />
+              <h1 className="qr-scan-title">Scan Your Product</h1>
+              <Sparkles className="sparkle-icon" />
+            </div>
             <p className="qr-scan-subtitle">
-              Use your camera or upload a QR code image to discover the complete journey of your product
+              Discover the complete journey of your Ayurvedic products with our blockchain-powered verification system
             </p>
           </header>
+
+          {/* Features showcase */}
+          <div className="features-showcase">
+            {features.map((feature, index) => (
+              <div 
+                key={index}
+                className={`feature-item ${index === activeFeature ? 'active' : ''}`}
+              >
+                <div className="feature-icon">{feature.icon}</div>
+                <div className="feature-content">
+                  <h4>{feature.title}</h4>
+                  <p>{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
           {/* Camera + Upload Grid */}
           <div className="qr-scan-grid">
             {/* Camera Scanner */}
-            <div className="qr-scan-card">
+            <div className="qr-scan-card scan-card-left">
+              <div className="card-glow"></div>
               <div className="qr-scan-card-content">
                 <div className="qr-scan-icon-container">
                   <Camera className="qr-scan-icon" />
@@ -100,7 +154,8 @@ const QRScan = () => {
             </div>
 
             {/* Upload Image */}
-            <div className="qr-scan-card">
+            <div className="qr-scan-card scan-card-right">
+              <div className="card-glow"></div>
               <div className="qr-scan-card-content">
                 <div className="qr-scan-icon-container">
                   <Upload className="qr-scan-icon" />
@@ -129,6 +184,7 @@ const QRScan = () => {
 
           {/* Manual Entry */}
           <div className="qr-scan-card manual-card">
+            <div className="card-glow"></div>
             <h3 className="qr-scan-card-title text-center">Manual Entry</h3>
             <p className="qr-scan-card-description text-center">
               Enter the batch code manually if scanning isn't working

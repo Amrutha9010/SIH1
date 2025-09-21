@@ -6,7 +6,7 @@
 
 :root {
   --primary-green: #22c55e;
-  --secondary-green: #16a34a;
+  --secondary-green: #1ba14c;
   --light-green: #dcfce7;
   --accent-green: #15803d;
   --dark-green: #166534;
@@ -60,7 +60,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  background: linear-gradient(135deg, var(--primary-green), #26b758);
   color: var(--white);
   box-shadow: var(--shadow-md);
 }
@@ -68,7 +68,7 @@ body {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, var(--secondary-green), var(--accent-green));
+  background: linear-gradient(135deg, #26b758, var(--accent-green));
 }
 
 .btn-secondary {

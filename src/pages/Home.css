@@ -1,5 +1,4 @@
 .home {
-  padding-top: 5rem;
   margin-left: 0px; 
   width: 100%;
 }
@@ -18,7 +17,58 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  width: 1300px;
+  max-width: 1200px; 
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Responsive fixes for hero section */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .qr-mockup {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr; /* stack text + image */
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .qr-mockup {
+    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+  }
 }
 
 .hero-text {
@@ -102,6 +152,7 @@
   font-weight: 700;
   color: var(--gray-800);
   margin-bottom: 1rem;
+  justify-content: center;
 }
 
 .section-subtitle {

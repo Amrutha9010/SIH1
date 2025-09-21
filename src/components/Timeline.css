@@ -1,6 +1,8 @@
 .timeline-container {
   padding: 2rem;
   margin-bottom: 2rem;
+  padding-top: 4rem;
+  background: var(--light-green);
 }
 
 .timeline-title {

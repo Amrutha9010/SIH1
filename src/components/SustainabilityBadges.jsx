@@ -211,6 +211,7 @@ const SustainabilityBadges = ({ data }) => {
           </div>
         </div>
       </motion.div>
+      <br/>
     </div>
   );
 };

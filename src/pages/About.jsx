@@ -38,29 +38,41 @@ const About = () => {
 
   const team = [
     {
-      name: "Dr. Priya Sharma",
-      role: "Founder & CEO",
+      name: "Arepalli Asha",
+      role: "UI/UX Designer",
       image: "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Ayurveda expert with 20+ years of experience in traditional medicine and supply chain transparency."
+      bio: "Creative designer passionate about crafting intuitive and engaging user experiences."
     },
     {
-      name: "Arjun Patel",
+      name: "Chiini Novahu",
       role: "CTO",
       image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
       bio: "Blockchain technology specialist focused on creating transparent and secure supply chains."
     },
     {
-      name: "Meera Reddy",
+      name: "Amrutha Chappa",
       role: "Head of Sustainability",
       image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
       bio: "Environmental scientist dedicated to promoting sustainable agricultural practices."
     },
     {
-      name: "Rajesh Kumar",
+      name: "D.J.N.P. Keerthika",
       role: "Farmer Relations Manager",
-      image: "https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
       bio: "Connecting traditional farming wisdom with modern transparency technologies."
-    }
+    },
+    {
+      name: "Lokesh Gandhi  Modalavalasa",
+      role: "Head of Sustainability",
+      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Environmental scientist dedicated to promoting sustainable agricultural practices."
+    },
+    {
+      name: "Arumalli VijayBabu",
+      role: "Head of Sustainability",
+      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Environmental scientist dedicated to promoting sustainable agricultural practices."
+    },
   ];
 
   return (
