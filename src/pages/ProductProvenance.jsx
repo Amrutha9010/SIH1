@@ -40,7 +40,7 @@ const ProductProvenance = () => {
       id: productId,
       name: "Organic Turmeric Powder",
       batchNumber: `BATCH-${productId.slice(-8)}`,
-      productImage: "https://images.pexels.com/photos/2378795/pexels-photo-2378795.jpeg?auto=compress&cs=tinysrgb&w=400",
+      productImage: "https://i.pinimg.com/originals/25/4f/f1/254ff1db7128864fe8f4da0993bd23c2.png",
       manufacturer: "AyurVeda Naturals Pvt. Ltd.",
       manufactureDate: "2024-01-15",
       expiryDate: "2026-01-15",

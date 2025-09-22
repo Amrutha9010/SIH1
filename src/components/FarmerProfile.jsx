@@ -20,7 +20,7 @@ const FarmerProfile = ({ farmer }) => {
     >
       <div className="profile-header">
         <div className="farmer-image">
-          <img src={farmer.photo} alt={farmer.name} />
+          <img src="https://i.pinimg.com/736x/91/ac/57/91ac5704e2eda1ab1f504c7b03a9e455.jpg" alt={farmer.name} />
           <div className="verified-badge">
             <HiShieldCheck size={16} />
             Verified Farmer

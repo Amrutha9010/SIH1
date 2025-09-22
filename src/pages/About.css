@@ -47,6 +47,7 @@
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+    margin-top: 50px;
 }
 
 .mission-image img {

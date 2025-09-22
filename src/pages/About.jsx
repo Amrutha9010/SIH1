@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import aboutImage from '../assets/about.png';
 import { 
   HiShieldCheck, 
   HiGlobeAlt, 
@@ -7,12 +8,16 @@ import {
   HiHeart,
   HiMail,
   HiPhone,
-  HiLocationMarker
+  HiLocationMarker,
+  HiArrowRight
 } from 'react-icons/hi';
 import './About.css';
 import Footer from '../components/Footer';
 
 const About = () => {
+  // State must be defined first
+  const [activeTeamMember, setActiveTeamMember] = useState(0);
+
   const values = [
     {
       icon: HiShieldCheck,
@@ -41,39 +46,76 @@ const About = () => {
       name: "Arepalli Asha",
       role: "UI/UX Designer",
       image: "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Creative designer passionate about crafting intuitive and engaging user experiences."
+      bio: "Creative designer passionate about crafting intuitive and engaging user experiences.",
+      expertise: ["User Research", "Visual Design", "Prototyping"]
     },
     {
-      name: "Chiini Novahu",
-      role: "CTO",
+      name: "Chinni Novahu",
+      role: "CTO and Backend Developer",
       image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Blockchain technology specialist focused on creating transparent and secure supply chains."
+      bio: "Blockchain technology specialist focused on creating transparent and secure supply chains.",
+      expertise: ["Blockchain", "Security", "System Architecture"]
     },
     {
       name: "Amrutha Chappa",
-      role: "Head of Sustainability",
+      role: "UI/UX Designer",
       image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Environmental scientist dedicated to promoting sustainable agricultural practices."
+      bio: "Creative designer passionate about crafting intuitive and engaging user experiences.",
+      expertise: ["UI Design", "User Experience", "Wireframing"]
     },
     {
       name: "D.J.N.P. Keerthika",
-      role: "Farmer Relations Manager",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Connecting traditional farming wisdom with modern transparency technologies."
+      role: "CTO and Backend Developer",
+      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Blockchain technology specialist focused on creating transparent and secure supply chains.",
+      expertise: ["Backend Development", "API Design", "Database Management"]
     },
     {
-      name: "Lokesh Gandhi  Modalavalasa",
-      role: "Head of Sustainability",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Environmental scientist dedicated to promoting sustainable agricultural practices."
+      name: "Lokesh Gandhi Modalavalasa",
+      role: "UI/UX Designer",
+      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Creative designer passionate about crafting intuitive and engaging user experiences.",
+      expertise: ["Frontend Development", "Responsive Design", "Animation"]
     },
     {
       name: "Arumalli VijayBabu",
-      role: "Head of Sustainability",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300",
-      bio: "Environmental scientist dedicated to promoting sustainable agricultural practices."
+      role: "CTO and Backend Developer",
+      image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=300",
+      bio: "Blockchain technology specialist focused on creating transparent and secure supply chains.",
+      expertise: ["DevOps", "Cloud Infrastructure", "Security"]
     },
   ];
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Auto-rotate team members
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTeamMember((prev) => (prev + 1) % team.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [team.length]);
 
   return (
     <>
@@ -85,6 +127,9 @@ const About = () => {
     >
       {/* Hero Section */}
       <section className="about-hero gradient-bg">
+        <div className="hero-bg-container">
+          <img src={aboutImage} alt="Ayurvedic herbs background" className="hero-bg-image" />
+        </div>
         <div className="container">
           <motion.div 
             className="hero-content"
@@ -114,6 +159,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              <br /><br /><br />
               <h2 className="section-title">Our Mission</h2>
               <p>
                 To create a transparent, sustainable, and trusted ecosystem for Ayurvedic products 
@@ -187,10 +233,10 @@ const About = () => {
         <div className="container">
           <motion.div 
             className="section-header"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
             <h2 className="section-title">Meet Our Team</h2>
             <p className="section-subtitle">
@@ -198,6 +244,7 @@ const About = () => {
             </p>
           </motion.div>
           
+          {/* Simple Team Grid (Fallback if new design doesn't work) */}
           <div className="team-grid">
             {team.map((member, index) => (
               <motion.div
@@ -216,6 +263,11 @@ const About = () => {
                   <h3 className="member-name">{member.name}</h3>
                   <p className="member-role">{member.role}</p>
                   <p className="member-bio">{member.bio}</p>
+                  <div className="member-expertise">
+                    {member.expertise.map((skill, idx) => (
+                      <span key={idx} className="expertise-tag">{skill}</span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -236,7 +288,7 @@ const About = () => {
             <div className="contact-info">
               <h2 className="section-title">Get In Touch</h2>
               <p className="section-subtitle">
-                Have questions about AyurChain? We'd love to hear from you.
+                Have questions about TrustTrace? We'd love to hear from you.
               </p>
               
               <div className="contact-details">
@@ -244,7 +296,7 @@ const About = () => {
                   <HiMail className="contact-icon" />
                   <div>
                     <h4>Email Us</h4>
-                    <p>contact@ayurchain.com</p>
+                    <p>contact@trusttrace.com</p>
                   </div>
                 </div>
                 

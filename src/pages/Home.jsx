@@ -92,7 +92,7 @@ const Home = () => {
         <section className="hero">
           <div className="hero-bg-container">
             <img src={heroImage} alt="Ayurvedic herbs background" className="hero-bg-image" />
-            <div className="hero-overlay"></div>
+            <div className="hero-overlay1"></div>
           </div>
           <div className="hero-background">
             <div className="hero-gradient"></div>
