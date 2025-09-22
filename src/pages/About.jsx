@@ -93,7 +93,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="hero-title">
-              About <span className="text-gradient">AyurChain</span>
+              About <span className="text-gradient">TrustTrace</span>
             </h1>
             <p className="hero-description">
               Revolutionizing the Ayurvedic industry through blockchain-powered transparency, 
@@ -102,7 +102,7 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-
+      
       {/* Mission Section */}
       <section className="mission">
         <div className="container">

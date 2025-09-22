@@ -1,9 +1,9 @@
 .footer {
-  background: linear-gradient(135deg, var(--light-green), var(--white));
+  background: linear-gradient(135deg, rgba(71, 205, 71, 0.526), var(--white));
   padding: 3rem 0 1rem;
   position: relative;
   overflow: hidden;
-  margin-top: 4rem;
+  /* margin-top: -2rem; */
 }
 
 .footer-content {
