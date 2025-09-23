@@ -89,46 +89,36 @@ const Home = () => {
         exit={{ opacity: 0 }}
       >
         {/* Hero Section */}
-        <section className="hero">
-          <div className="hero-bg-container">
-            <img src={heroImage} alt="Ayurvedic herbs background" className="hero-bg-image" />
-            <div className="hero-overlay1"></div>
+        <section className="home-hero">
+          <div className="home-hero-bg-container">
+            <img src={heroImage} alt="Ayurvedic herbs background" className="home-hero-bg-image" />
+            <div className="home-hero-overlay"></div>
           </div>
-          <div className="hero-background">
-            <div className="hero-gradient"></div>
-            <div className="hero-pattern"></div>
+          <div className="home-hero-background">
+            <div className="home-hero-gradient"></div>
+            <div className="home-hero-pattern"></div>
           </div>
           
           <div className="container">
-            <div className="hero-content">
+            <div className="home-hero-content">
               <motion.div
-                className="hero-text"
+                className="home-hero-text"
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
               >
-                {/* <motion.div
-                  className="badge"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  <HiSparkles className="badge-icon" />
-                  Trusted by 50K+ Customers
-                </motion.div> */}
-
-                <h1 className="hero-title">
-                  <span className="title-line">Experience Pure</span>
-                  <span className="title-gradient">Ayurvedic Transparency</span>
-                  <span className="title-line">From Farm to Soul</span>
+                <h1 className="home-hero-title">
+                  <span className="home-title-line">Experience Pure</span>
+                  <span className="home-title-gradient">Ayurvedic Transparency</span>
+                  <span className="home-title-line">From Farm to Soul</span>
                 </h1>
 
-                <p className="hero-description">
+                <p className="home-hero-description">
                   Discover the complete journey of your Ayurvedic products with blockchain-powered transparency. 
                   Every herb, every process, every story - verified and traceable.
                 </p>
                 <br/>
-                <div className="hero-actions">
+                <div className="home-hero-actions">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link to="/scan" className="btn btn-primary">
                       <HiQrcode className="btn-icon" />
@@ -144,21 +134,6 @@ const Home = () => {
                     </Link>
                   </motion.div>
                 </div>
-
-                {/* <div className="hero-stats">
-                  {stats.slice(0, 2).map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      className="hero-stat"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                    >
-                      <div className="stat-number">{stat.number}</div>
-                      <div className="stat-label">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </div> */}
               </motion.div>
             </div>
           </div>

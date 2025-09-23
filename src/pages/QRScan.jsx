@@ -85,117 +85,118 @@ const QRScan = () => {
       <div className="qr-scan-page">
         {/* ✅ Hero Section with background image */}
         <section className="hero-section">
-          <div className="hero-bg-container">
-            <img src={heroImage} alt="Ayurvedic herbs background" className="hero-bg-image" />
-            <div className="hero-overlay"></div>
-          </div>
-          <div className="floating-elements">
-            <div className="floating-element element-1"></div>
-            <div className="floating-element element-2"></div>
-            <div className="floating-element element-3"></div>
-            <div className="floating-element element-4"></div>
-          </div>
+  <div className="hero-bg-container">
+    <img src={heroImage} alt="Ayurvedic herbs background" className="hero-bg-image" />
+    <div className="hero-overlay"></div>
+  </div>
+  <div className="floating-elements">
+    <div className="floating-element element-1"></div>
+    <div className="floating-element element-2"></div>
+    <div className="floating-element element-3"></div>
+    <div className="floating-element element-4"></div>
+  </div>
 
-          {/* Floating herbs */}
-          <div className="floating-herbs">
-            <div className="herb herb-1"></div>
-            <div className="herb herb-2"></div>
-            <div className="herb herb-3"></div>
-            <div className="herb herb-4"></div>
-          </div>
+  {/* Floating herbs */}
+  <div className="floating-herbs">
+    <div className="herb herb-1"></div>
+    <div className="herb herb-2"></div>
+    <div className="herb herb-3"></div>
+    <div className="herb herb-4"></div>
+  </div>
 
-          {/* Hero Content */}
-          <div className="hero-content">
-            <div className="qr-scan-container">
-              {/* Header with Left Content and Right Scanner */}
-              <div className="qr-scan-header-wrapper">
-                {/* Left Side - Text Content */}
-                <div className="qr-scan-header-left">
-                  <header className="qr-scan-header">
-                    <div className="title-sparkle">
-                      <Sparkles className="sparkle-icon" />
-                      <h1 className="qr-scan-title">Scan Your Product</h1>
-                      <Sparkles className="sparkle-icon" />
-                    </div>
-                    <p className="qr-scan-subtitle">
-                      Discover the complete journey of your Ayurvedic products with our blockchain-powered verification system
-                    </p>
-                  </header>
-
-                  {/* Features Showcase */}
-                  <div className="features-showcase">
-                    {features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className={`feature-item ${index === activeFeature ? 'active' : ''}`}
-                      >
-                        <div className="feature-icon">{feature.icon}</div>
-                        <div className="feature-content">
-                          <h4>{feature.title}</h4>
-                          <p>{feature.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>      
-              </div>
+  {/* Hero Content */}
+  <div className="hero-content">
+    <div className="qr-scan-container">
+      {/* Header with Left Content and Right Scanner */}
+      <div className="qr-scan-header-wrapper">
+        {/* Left Side - Text Content */}
+        <div className="qr-scan-header-left">
+          <header className="qr-scan-header">
+            <div className="title-sparkle">
+              <Sparkles className="sparkle-icon" />
+              <h1 className="qr-scan-title">Scan Your Product</h1>
+              <Sparkles className="sparkle-icon" />
             </div>
-            {/* Right Side - Scanner Component */}
-                <motion.div
-                  className="qr-scan-header-right"
-                  initial={{ opacity: 0, x: 60 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                >
-                  <div className="scanner-visual-container">
-                    <div className="main-qr-card">
-                      <div className="qr-header">
-                        <div className="qr-dots">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div className="qr-content">
-                        <HiQrcode className="qr-icon" />
-                        <div className="qr-text">
-                          <span>Scan to Verify</span>
-                          <small>AyurChain Certified</small>
-                        </div>
-                      </div>
-                      <div className="qr-glow"></div>
-                    </div>
+            <p className="qr-scan-subtitle">
+              Discover the complete journey of your Ayurvedic products with our blockchain-powered verification system
+            </p>
+          </header>
 
-                    <div className="floating-cards">
-                      <motion.div 
-                        className="floating-card card-1"
-                        animate={{ y: [0, -15, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <FaLeaf />
-                        <span>Organic</span>
-                      </motion.div>
-                      <motion.div 
-                        className="floating-card card-2"
-                        animate={{ y: [0, 15, 0] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                      >
-                        <HiShieldCheck />
-                        <span>Verified</span>
-                      </motion.div>
-                      <motion.div 
-                        className="floating-card card-3"
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                      >
-                        <HiHeart />
-                        <span>Fair Trade</span>
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
+          {/* Features Showcase */}
+          <div className="features-showcase">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`feature-item ${index === activeFeature ? 'active' : ''}`}
+              >
+                <div className="feature-icon">{feature.icon}</div>
+                <div className="feature-content">
+                  <h4>{feature.title}</h4>
+                  <p>{feature.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+
+        {/* Right Side - Scanner Component */}
+        <motion.div
+          className="qr-scan-header-right"
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <div className="scanner-visual-container">
+            <div className="main-qr-card">
+              <div className="qr-header">
+                <div className="qr-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div className="qr-content">
+                <HiQrcode className="qr-icon" />
+                <div className="qr-text">
+                  <span>Scan to Verify</span>
+                  <small>AyurChain Certified</small>
+                </div>
+              </div>
+              <div className="qr-glow"></div>
+            </div>
+
+            <div className="floating-cards">
+              <motion.div 
+                className="floating-card card-1"
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <FaLeaf />
+                <span>Organic</span>
+              </motion.div>
+              <motion.div 
+                className="floating-card card-2"
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <HiShieldCheck />
+                <span>Verified</span>
+              </motion.div>
+              <motion.div 
+                className="floating-card card-3"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              >
+                <HiHeart />
+                <span>Fair Trade</span>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Main Content Section */}
         <section className="main-content-section">

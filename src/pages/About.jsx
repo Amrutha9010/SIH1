@@ -126,27 +126,28 @@ const About = () => {
       exit={{ opacity: 0 }}
     >
       {/* Hero Section */}
-      <section className="about-hero gradient-bg">
-        <div className="hero-bg-container">
-          <img src={aboutImage} alt="Ayurvedic herbs background" className="hero-bg-image" />
-        </div>
-        <div className="container">
-          <motion.div 
-            className="hero-content"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="hero-title">
-              About <span className="text-gradient">TrustTrace</span>
-            </h1>
-            <p className="hero-description">
-              Revolutionizing the Ayurvedic industry through blockchain-powered transparency, 
-              connecting conscious consumers with authentic, traceable products from farm to pharmacy.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <section className="about-hero about-hero-bg">
+  <div className="about-hero-bg-container">
+    <img src={aboutImage} alt="Ayurvedic herbs background" className="about-hero-bg-image" />
+    <div className="about-hero-overlay"></div>
+  </div>
+  <div className="container">
+    <motion.div 
+      className="about-hero-content"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h1 className="about-hero-title">
+        About <span className="text-gradient">TrustTrace</span>
+      </h1>
+      <p className="about-hero-description">
+        Revolutionizing the Ayurvedic industry through blockchain-powered transparency, 
+        connecting conscious consumers with authentic, traceable products from farm to pharmacy.
+      </p>
+    </motion.div>
+  </div>
+</section>
       
       {/* Mission Section */}
       <section className="mission">
@@ -182,7 +183,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <img 
-                src="https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                src="https://i.pinimg.com/1200x/2c/bd/b7/2cbdb7bdbb4d2f90d473db37ea090fd6.jpg" 
                 alt="Ayurvedic herbs and traditional medicine"
               />
             </motion.div>
